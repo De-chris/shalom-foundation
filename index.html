@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shalom's Foundation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    :root {
+        --primary-color: #008080;
+        --secondary-color: #00b3b3;
+        --background-light: #ffffff;
+        --background-dark: #1a1a1a;
+        --text-light: #ffffff;
+        --text-dark: #000000;
+    }
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--background-light);
+        color: var(--text-dark);
+        transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+        background: var(--background-dark);
+        color: var(--text-light);
+    }
+    header {
+        background: var(--primary-color);
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+    }
+    nav a i {
+        margin-right: 5px;
+    }
+    .mode-toggle {
+        cursor: pointer;
+        font-size: 18px;
+    }
+    .hero {
+        text-align: center;
+        padding: 50px 20px;
+        background: var(--secondary-color);
+        color: white;
+    }
+    .section {
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .section img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    .contact-menu {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: var(--primary-color);
+        padding: 15px;
+        border-radius: 10px;
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .contact-menu a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+    .contact-menu a i {
+        margin-right: 5px;
+    }
+    .contact-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    footer {
+        background: var(--primary-color);
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    footer a {
+        color: white;
+        margin: 0 10px;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-hand-holding-heart"></i> Shalom's Foundation</h1>
+    <nav>
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-bread-slice"></i> Bakery</a>
+        <a href="#"><i class="fas fa-tools"></i> Skill Acquisition</a>
+        <a href="#"><i class="fas fa-info-circle"></i> About</a>
+    </nav>
+    <div class="mode-toggle" onclick="toggleMode()"><i class="fas fa-moon"></i></div>
+</header>
+
+<section class="hero">
+    <h2>Welcome to Shalom's Foundation</h2>
+    <p>Shalom's Foundation is a big and impactful organization that comprises of Bakery, Skill acquisition programs, and many more. <br><br>
+    <b>[Leave space here for you to fill more details]</b></p>
+</section>
+
+<section class="section">
+    <h2><i class="fas fa-bread-slice"></i> Our Bakery</h2>
+    <p>We produce high-quality bread, pastries, and snacks that bring smiles to our community.</p>
+    <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38" alt="Bakery">
+</section>
+
+<section class="section">
+    <h2><i class="fas fa-tools"></i> Skill Acquisition</h2>
+    <p>We empower individuals with skills that create opportunities for financial independence and personal growth.</p>
+    <img src="https://images.unsplash.com/photo-1581093588401-22d56b34f1aa" alt="Skills">
+</section>
+
+<!-- Contact Floating Menu -->
+<div class="contact-menu" id="contactMenu">
+    <a href="https://wa.me/2348000000000"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="mailto:shalom@example.com"><i class="fas fa-envelope"></i> Email</a>
+    <a href="tel:+2348000000000"><i class="fas fa-phone"></i> Call</a>
+</div>
+<button class="contact-btn" onclick="toggleContactMenu()"><i class="fas fa-comments"></i></button>
+
+<footer>
+    <p>&copy; 2025 Shalom's Foundation | All Rights Reserved</p>
+    <a href="https://www.youtube.com/channel/UCXXXXX" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://facebook.com/shalomsfoundation" target="_blank"><i class="fab fa-facebook"></i></a>
+</footer>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("dark");
+    let icon = document.querySelector(".mode-toggle i");
+    if (document.body.classList.contains("dark")) {
+        icon.classList.replace("fa-moon", "fa-sun");
+    } else {
+        icon.classList.replace("fa-sun", "fa-moon");
+    }
+}
+
+function toggleContactMenu() {
+    let menu = document.getElementById("contactMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>
